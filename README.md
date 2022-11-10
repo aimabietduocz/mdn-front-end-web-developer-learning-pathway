@@ -30,3 +30,11 @@
 -   `<header>` represents a group of introductory content. If it is a child of `<body>` it defines the global header of a webpage, but if it's a child of an `<article> `or` <section>` it defines a specific header for that section (try not to confuse this with titles and headings).
 -   `<nav> `contains the main navigation functionality for the page. Secondary links, etc., would not go in the navigation.
 -   `<footer>` represents a group of end content for a page.
+
+## Multimedia and embedding
+
+-   HTML `<figure>` and `<figcaption>` elements are created for exactly this purpose: to provide a semantic container for figures, The `<figcaption>` element tells browsers, and assistive technology that the caption describes the other content of the `<figure>` element.
+    -   > Note: From an accessibility viewpoint, captions and alt text have distinct roles. Captions benefit even people who can see the image, whereas alt text provides the same functionality as an absent image. Therefore, captions and alt text shouldn't just say the same thing, because they both appear when the image is gone.
+-   There are two types of images on the web:
+    -   **Raster images** are defined using a grid of pixels — a raster image file contains information showing exactly where each pixel is to be placed, and exactly what color it should be. Popular web raster formats include Bitmap (`.bmp`), PNG (`.png`), JPEG (`.jpg`), and GIF (`.gif`).
+    -   **Vector images** are defined using algorithms — a vector image file contains shape and path definitions that the computer can use to work out what the image should look like when rendered on the screen.
