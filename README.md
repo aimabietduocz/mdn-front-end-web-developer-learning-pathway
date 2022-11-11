@@ -38,3 +38,14 @@
 -   There are two types of images on the web:
     -   **Raster images** are defined using a grid of pixels — a raster image file contains information showing exactly where each pixel is to be placed, and exactly what color it should be. Popular web raster formats include Bitmap (`.bmp`), PNG (`.png`), JPEG (`.jpg`), and GIF (`.gif`).
     -   **Vector images** are defined using algorithms — a vector image file contains shape and path definitions that the computer can use to work out what the image should look like when rendered on the screen.
+
+## HTML tables
+
+We can style table with `<col>`, for example:
+
+```html
+<colgroup>
+    <col />
+    <col style="background-color: yellow" span="2" />
+</colgroup>
+```
