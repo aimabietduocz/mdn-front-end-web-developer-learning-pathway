@@ -49,3 +49,31 @@ We can style table with `<col>`, for example:
     <col style="background-color: yellow" span="2" />
 </colgroup>
 ```
+
+# CSS - Styling the Web
+
+## CSS first steps
+
+Syntax
+
+-   `li.special { css }`
+
+This syntax means "target any li element that has a class of special".
+
+-   `li em { css }`
+
+This selector will select any `<em>` element that is inside (a descendant of) an `<li>`
+
+-   `h1 + p { css }`
+
+Something else you might like to try is styling a paragraph when it comes directly after a heading at the same hierarchy level in the HTML. To do so, place a + (**an adjacent sibling combinator**) between the selectors.
+
+-   What happens if a browser encounters CSS it doesn't understand?
+
+The answer is that it does nothing, and just moves on to the next bit of CSS!
+
+## CSS building blocks
+
+## Styling text
+
+## CSS layout
