@@ -74,6 +74,106 @@ The answer is that it does nothing, and just moves on to the next bit of CSS!
 
 ## CSS building blocks
 
+### Cascade and inheritance, CSS selectors
+
+-   `article > p { css }`
+
+selects paragraphs that are direct children of <`article`> elements using the child combinator (`>`):
+
+-   `p::first-line { }`
+
+`::first-line` always selects the first line of text inside an element (a <`p`> in the above case)
+
+#### Outer display type
+
+If a box has an outer display type of `block`, then:
+
+-   The box will break onto a new line.
+-   The width and height properties are respected.
+-   Padding, margin and border will cause other elements to be pushed away from the box.
+-   The box will extend in the inline direction to fill the space available in its container. In most cases, the box will become as wide as its container, filling up 100% of the space available.
+
+Some HTML elements, such as <`h1`> and <`p`>, use block as their outer display type by default.
+
+If a box has an outer display type of `inline`, then:
+
+-   The box will not break onto a new line.
+-   The width and height properties will not apply.
+-   Vertical padding, margins, and borders will apply but will not cause other inline boxes to move away from the box.
+-   Horizontal padding, margins, and borders will apply and will cause other inline boxes to move away from the box.
+
+Some HTML elements, such as <`a`>, <`span`>, <`em`> and <`strong`> use inline as their outer display type by default.
+
+#### Inner display type
+
+You can change the inner display type for example by setting `display: flex;`. The element will still use the outer display type `block` but this changes the inner display type to `flex`. Any direct children of this box will become flex items and behave according to the Flexbox specification.
+
+[Detail](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
+
+### The box model
+
+#### Parts of a box
+
+-   `Content box`: The area where your content is displayed; size it using properties like _inline-size_ and _block-size_ or _width_ and _height_.
+-   `Padding box`: The padding sits around the content as white space; size it using _padding_ and related properties.
+-   `Border box`: The border box wraps the content and any padding; size it using _border_ and related properties.
+-   `Margin box`: The margin is the outermost layer, wrapping the content, padding, and border as whitespace between this box and other elements; size it using _margin_ and related properties.
+
+The below diagram shows these layers:
+
+![](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model/box-model.png)
+
+If we assume that a box has the following CSS:
+
+```css
+.box {
+    width: 350px;
+    height: 150px;
+    margin: 10px;
+    padding: 25px;
+    border: 5px solid black;
+}
+```
+
+The _actual_ space taken up by the box will be 410px wide (350 + 25 + 25 + 5 + 5) and 210px high (150 + 25 + 25 + 5 + 5).
+![](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model/standard-box-model.png)
+
+> **Note**: The margin is not counted towards the actual size of the box — sure, it affects the total space that the box will take up on the page, but only the space outside the box. The box's area stops at the border — it does not extend into the margin.
+
+#### The alternative CSS box model
+
+In the alternative box model, any width is the width of the visible box on the page. The content area width is that width minus the width for the padding and border (see image below). No need to add up the border and padding to get the real size of the box.
+
+To turn on the alternative model for an element, set `box-sizing: border-box` on it. With the code above, the `actual` space taken up by the box will be 350px in the inline direction and 150px in the block direction.
+![](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model/alternate-box-model.png)
+
+To use the alternative box model for all of your elements (which is a common choice among developers), set the `box-sizing` property on the <`html`> element and set all other elements to inherit that value:
+
+```css
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+```
+
+### Margins, padding, and borders
+
+#### Margin
+
+The margin is an invisible space around your box. It pushes other elements away from the box.
+
+#### Borders
+
+The border is drawn between the margin and the padding of a box.
+
+#### Padding
+
+The padding sits between the border and the content area and is used to push the content away from the border. Unlike margins, you cannot have a negative padding.
+
 ## Styling text
 
 ## CSS layout
