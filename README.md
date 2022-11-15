@@ -174,6 +174,86 @@ The border is drawn between the margin and the padding of a box.
 
 The padding sits between the border and the content area and is used to push the content away from the border. Unlike margins, you cannot have a negative padding.
 
+### Using display: inline-block
+
+`display: inline-block` is a special value of `display`, which provides a middle ground between `inline` and `block`. Use it if you do not want an item to break onto a new line, but do want it to respect `width` and `height` and avoid the **overlapping**.
+
+### Backgrounds
+
+#### Controlling background-repeat
+
+-   no-repeat — stop the background from repeating altogether.
+-   repeat-x — repeat horizontally.
+-   repeat-y — repeat vertically.
+-   repeat — the default; repeat in both directions.
+
+#### Sizing the background image
+
+In this case we could use the `background-size` property, which can take `length` or `percentage` values, to size the image to fit inside the background.
+You can also use keywords:
+
+-   `cover` — the browser will make the image just large enough so that it completely covers the box area while still retaining its aspect ratio. In this case, part of the image is likely to end up outside the box.
+-   `contain` — the browser will make the image the right size to fit inside the box. In this case, you may end up with gaps on either side or on the top and bottom of the image, if the aspect ratio of the image is different from that of the box.
+
+#### Positioning the background image
+
+We could use `top`, `center`,`bottom`, `left`, `right` to position the image, also:
+
+```css
+background-position: top 20px right 10px;
+```
+
+### Overflowing content
+
+Everything in CSS is a box. You can constrain the size of these boxes by assigning values of `width` and `height`. **Overflow happens when there is too much content to fit in a box.**
+
+See [the examples](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Overflowing_content)
+
+### The overflow property
+
+It is the way you instruct the browser how it should behave.
+The default value of overflow is `visible`. With this default, we can see content when it overflows.
+
+To crop content when it overflows, you can set `overflow: hidden`. This does exactly what it says: it hides overflow. Beware that this can make some content invisible. You should only do this if hiding content won't cause problems.
+
+Instead, perhaps you would like to add scrollbars when content overflows? Using `overflow: scroll`, browsers with visible scrollbars will always display them—even if there is not enough content to overflow.
+
+If you only want scrollbars to appear when there is more content than can fit in the box, use `overflow: auto`. This allows the browser to determine if it should display scrollbars.
+
+### CSS Values and units
+
+#### Relative length units
+
+`em`: Font size of the parent, in the case of typographical properties like `font-size`, and font size of the element itself, in the case of other properties like `width`.
+
+`rem`: Font size of the root element.
+
+`vw`: 1% of the viewport's width.
+
+`vh`: 1% of the viewport's height.
+
+### Sizing items in CSS
+
+#### min- and max- sizes
+
+If you have a box that might contain a variable amount of content, and you always want it to be at least a certain height, you could set the `min-height` property on it. The box will always be at least this height, but will then grow taller if there is more content than the box has space for at its minimum height.
+
+A common use of `max-width` is to cause images to scale down if there is not enough space to display them at their intrinsic width while making sure they don't become larger than that width.
+
+#### Viewport units
+
+The viewport — which is the visible area of your page in the browser you are using to view a site — also has a size. In CSS we have units which relate to the size of the viewport — the `vw` unit for viewport width, and `vh` for viewport height. Using these units you can size something relative to the viewport of the user.
+
+**If you change the vh and vw values this will change the size of the box or font; changing the viewport size will also change their sizes because they are sized relative to the viewport.**
+
+### Images, media, and form elements
+
+Assume we have a box 200 pixels and the image inside of it is larger than 200 pixels and overflows the box. We can add `max-width: 100%` to the image css.
+
+We also have `object-fit` property, `object-fit: cover` will size the image down, maintaining the aspect ratio so that it neatly fills the box. As the aspect ratio is maintained, some parts of the image will be cropped by the box.
+
+If we use `contain` as a value, the image will be scaled down until it is small enough to fit inside the box. This will result in "letterboxing" if it is not the same aspect ratio as the box.
+
 ## Styling text
 
 ## CSS layout
