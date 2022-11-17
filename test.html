@@ -1,28 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Flexbox align 0 — starting code</title>
     <style>
-        .paragraph {
-            width: 150px;
-            background-color: lightyellow;
-            font-style: oblique;
-            text-align: center;
+        html {
+            font-family: sans-serif;
         }
+
+        body {
+            width: 70%;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+
+        button {
+            font-size: 18px;
+            line-height: 1.5;
+            width: 15%;
+        }
+
+        div {
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button:last-child {
+            order: -3;
+        }
+
+        /* Add your flexbox CSS below here */
     </style>
 </head>
 
 <body>
-
-    <div class="container">
-        <p class="paragraph">I want this paragraph to be at the center, but it's not.</p>
+    <div>
+        <button>Smile</button>
+        <button>Laugh</button>
+        <button>Wink</button>
+        <button>Shrug</button>
+        <button>Blush</button>
     </div>
-
-
 </body>
 
 </html>
