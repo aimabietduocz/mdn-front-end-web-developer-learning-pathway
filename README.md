@@ -256,4 +256,39 @@ If we use `contain` as a value, the image will be scaled down until it is small 
 
 ## Styling text
 
+#### Font style, font weight, text transform, and text decoration
+
+-   `text-transform`: Allows you to set your font to be transformed. Values include:
+    -   none: Prevents any transformation.
+    -   uppercase: Transforms all text to capitals.
+    -   lowercase: Transforms all text to lower case.
+    -   capitalize: Transforms all words to have the first letter capitalized.
+    -   full-width: Transforms all glyphs to be written inside a fixed-width square, similar to a monospace font, allowing aligning of, e.g., Latin characters along with Asian language glyphs (like Chinese, Japanese, Korean).
+
+beside that, we have:
+
+-   `text-decoration` : none/ underline/ overline/ line-through
+-   `font-weight`: normal/ bold/ lighter/ bolder/ 100-900
+-   `font-style`: normal/ italic/ oblique (_Sets the text to use a simulated version of an italic font, created by slanting the normal version._)
+
+### Text layout
+
+#### Text alignment
+
+-   `text-align`
+
+    -   left: Left-justifies the text.
+    -   right: Right-justifies the text.
+    -   center: Centers the text.
+    -   justify: Makes the text spread out, varying the gaps in between the words so that all lines of text are the same width. You need to use this carefully — it can look terrible, especially when applied to a paragraph with lots of long words in it. If you are going to use this, you should also think about using something else along with it, such as hyphens, to break some of the longer words across lines.
+
+-   The `line-height` property sets the height of each line of text.
+-   The `letter-spacing` and `word-spacing` properties allow you to set the spacing between letters and words in your text.
+
+### List-specific styles
+
+-   `list-style-type`: Sets the type of bullets to use for the list, for example, square or circle bullets for an unordered list, or numbers, letters, or roman numerals for an ordered list.
+-   `list-style-position`: Sets whether the bullets, at the start of each item, appear inside or outside the lists.
+-   `list-style-image`: Allows you to use a custom image for the bullet, rather than a simple square or circle.
+
 ## CSS layout
