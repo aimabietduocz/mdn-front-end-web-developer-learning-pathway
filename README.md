@@ -291,6 +291,21 @@ beside that, we have:
 -   `list-style-position`: Sets whether the bullets, at the start of each item, appear inside or outside the lists.
 -   `list-style-image`: Allows you to use a custom image for the bullet, rather than a simple square or circle.
 
-## CSS layout
+# JavaScript - Dynamic client-side scripting
 
-### Positioning
+## JavaScript first steps
+
+APIs are ready-made sets of code building blocks that allow a developer to implement programs that would otherwise be hard or impossible to implement.
+
+They generally fall into two categories.
+
+![](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/browser.png)
+
+**Browser APIs** are built into your web browser, and are able to expose data from the surrounding computer environment, or do useful complex things.
+
+**Third party APIs** are not built into the browser by default, and you generally have to grab their code and information from somewhere on the Web. For example:
+
+When you load a web page in your browser, you are running your code (the HTML, CSS, and JavaScript) inside an execution environment (the browser tab). This is like a factory that takes in raw materials (the code) and outputs a product (the web page).
+![](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript/execution.png)
+
+A very common use of JavaScript is to dynamically modify HTML and CSS to update a user interface, via the Document Object Model API (as mentioned above). Note that the code in your web documents is generally loaded and executed in the order it appears on the page. Errors may occur if JavaScript is loaded and run before the HTML and CSS that it is intended to modify.
